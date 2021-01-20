@@ -18,6 +18,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -91,7 +92,6 @@ public class PersonServiceImplTest {
     @Test
     public void create_whenMarriedAndInvalidSpouse_thenThrowException() {
         var john = personTestHelper.createSample();
-        john.setSpouseName(null);
         john.setSpouseBirthday(null);
         given(personRepository.save(any())).willReturn(john);
 
@@ -101,6 +101,7 @@ public class PersonServiceImplTest {
     @Test
     public void create_whenSingleAndNonNullSpouse_thenThrowException() {
         var john = personTestHelper.createSample();
+        john.setSpouseName(null);
         john.setMaritalStatus(MaritalStatus.SINGLE);
         given(personRepository.save(any())).willReturn(john);
 
@@ -132,7 +133,7 @@ public class PersonServiceImplTest {
     public void update_whenMarriedAndInvalidSpouse_thenThrowException() {
         var john = personTestHelper.createSample();
         john.setSpouseName(null);
-        john.setSpouseBirthday(null);
+        john.setSpouseBirthday(new Date());
         given(personRepository.existsById(any())).willReturn(false);
 
         assertThrows(SpouseRequiredForSpecifiedMaritalStatusException.class, () -> personService.update(1L, john));
@@ -141,6 +142,7 @@ public class PersonServiceImplTest {
     @Test
     public void update_whenSingleAndNonNullSpouse_thenThrowException() {
         var john = personTestHelper.createSample();
+        john.setSpouseBirthday(null);
         john.setMaritalStatus(MaritalStatus.SINGLE);
         given(personRepository.existsById(any())).willReturn(false);
 

@@ -62,11 +62,13 @@ public class PersonServiceImpl implements PersonService {
 
     private void validate(Person person) {
         var spouseRequired = person.getMaritalStatus() == MaritalStatus.MARRIED;
-        var invalidSpouse = (person.getSpouseName() == null || person.getSpouseName().isBlank()) &&
-                person.getSpouseBirthday() == null;
+        var invalidSpouseName = person.getSpouseName() == null || person.getSpouseName().isBlank();
+        var invalidSpouseBirthday = person.getSpouseBirthday() == null;
+        var invalidSpouse = invalidSpouseName || invalidSpouseBirthday;
+        var spouseDefined = !invalidSpouseName || !invalidSpouseBirthday;
 
         if (invalidSpouse && spouseRequired) throw new SpouseRequiredForSpecifiedMaritalStatusException();
 
-        if (!invalidSpouse && !spouseRequired) throw new SpouseNotAllowedForSpecifiedMaritalStatusException();
+        if (spouseDefined && !spouseRequired) throw new SpouseNotAllowedForSpecifiedMaritalStatusException();
     }
 }
