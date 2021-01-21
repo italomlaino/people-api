@@ -19,6 +19,9 @@ cd people-api
   ./gradlew bootRun
 ```
 
+## Postman Collection
+File -> Import -> Select [postman-collection.json](postman_collection.json) -> Import
+
 ## Routes
 
 * Create
