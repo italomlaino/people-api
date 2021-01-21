@@ -22,6 +22,8 @@ cd people-api
 ## Postman Collection
 File -> Import -> Select [postman-collection.json](postman_collection.json) -> Import
 
+![Demo](postman_collection.gif)
+
 ## Routes
 
 * Create
