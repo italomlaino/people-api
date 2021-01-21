@@ -1,4 +1,4 @@
-package com.italomlaino.peopleapi.web.exception;
+package com.italomlaino.peopleapi.domain.view;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.http.HttpStatus;

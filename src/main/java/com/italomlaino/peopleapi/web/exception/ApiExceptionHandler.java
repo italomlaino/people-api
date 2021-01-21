@@ -1,6 +1,7 @@
 package com.italomlaino.peopleapi.web.exception;
 
 import com.italomlaino.peopleapi.domain.exception.DomainException;
+import com.italomlaino.peopleapi.domain.view.ApiException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
