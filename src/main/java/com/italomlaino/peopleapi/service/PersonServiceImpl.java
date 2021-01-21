@@ -5,7 +5,7 @@ import com.italomlaino.peopleapi.domain.entity.Person;
 import com.italomlaino.peopleapi.domain.exception.PersonNotFoundException;
 import com.italomlaino.peopleapi.domain.exception.SpouseNotAllowedForSpecifiedMaritalStatusException;
 import com.italomlaino.peopleapi.domain.exception.SpouseRequiredForSpecifiedMaritalStatusException;
-import com.italomlaino.peopleapi.domain.repository.PersonRepository;
+import com.italomlaino.peopleapi.repository.PersonRepository;
 import com.italomlaino.peopleapi.domain.view.PageView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

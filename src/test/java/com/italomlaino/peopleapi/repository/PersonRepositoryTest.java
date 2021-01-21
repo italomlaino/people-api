@@ -1,4 +1,4 @@
-package com.italomlaino.peopleapi.domain.repository;
+package com.italomlaino.peopleapi.repository;
 
 import com.italomlaino.peopleapi.TestConfig;
 import com.italomlaino.peopleapi.test.PersonTestHelper;

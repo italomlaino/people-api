@@ -5,7 +5,7 @@ import com.italomlaino.peopleapi.domain.entity.MaritalStatus;
 import com.italomlaino.peopleapi.domain.exception.PersonNotFoundException;
 import com.italomlaino.peopleapi.domain.exception.SpouseNotAllowedForSpecifiedMaritalStatusException;
 import com.italomlaino.peopleapi.domain.exception.SpouseRequiredForSpecifiedMaritalStatusException;
-import com.italomlaino.peopleapi.domain.repository.PersonRepository;
+import com.italomlaino.peopleapi.repository.PersonRepository;
 import com.italomlaino.peopleapi.test.PersonTestHelper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
